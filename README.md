@@ -1,7 +1,7 @@
-# 🚀 Drosera-customtrap-Community-Voting
+# 🚀 Drosera-customtrap-Time-Lock-Trap
 
 **Contract Address:**  
-`0xC790Ea032589e421edA386CA70E4756811aE457E`
+`0x1bA094B65a0b336cb06D49A3A6FC1A2E30f5D059`
 
 **Functionality:**  
 🎯 Purpose of This Logic
@@ -105,7 +105,7 @@ forge build
 
 ```toml
 path = "out/Trap.sol/Trap.json"
-response_contract = "0xC790Ea032589e421edA386CA70E4756811aE457E"
+response_contract = "0x1bA094B65a0b336cb06D49A3A6FC1A2E30f5D059"
 response_function = "CommunityVoting()"
 ```
 
@@ -126,7 +126,7 @@ interface IEthereumHoodie {
 }
 
 contract Trap is ITrap {
-    address public constant RESPONSE_CONTRACT = 0xC790Ea032589e421edA386CA70E4756811aE457E;
+    address public constant RESPONSE_CONTRACT = 0x1bA094B65a0b336cb06D49A3A6FC1A2E30f5D059;
     string constant discordName = "yourdiscord";
 
     function collect() external view returns (bytes memory) {
