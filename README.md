@@ -105,7 +105,7 @@ forge build
 ```toml
 path = "out/Trap.sol/Trap.json"
 response_contract = "0x1bA094B65a0b336cb06D49A3A6FC1A2E30f5D059"
-response_function = "CommunityVoting()"
+response_function = "checkStatus()"
 ```
 
 ---
