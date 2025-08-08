@@ -4,11 +4,10 @@
 `0x1bA094B65a0b336cb06D49A3A6FC1A2E30f5D059`
 
 **Functionality:**  
-🎯 Purpose of This Logic
-Goal	Explanation
-🧪 Simulate Uncertainty	Produces a result that changes depending on time
-⚔️ Test Conditional Logic	Allows your Trap contract to respond to unpredictable behavior
-🐞 Debugging	Helps you verify how your trap behaves with dynamic target states
+🪤 New Logic: Time Lock Honeypot Trap
+🧠 Logic Description:
+The contract appears to allow anyone to claim() or withdraw(), but only after a certain amount of time has passed (e.g., 5 minutes after deployment).
+Bots typically don't carefully check the block.timestamp, and will attempt to claim prematurely, then fail — or get stuck in a condition that causes them to lose gas.
 
 ---
 
@@ -117,20 +116,21 @@ File: `src/Trap.sol`
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.30;
 
+// Import path harus sesuai path dependency drosera-contracts kamu
 import {ITrap} from "drosera-contracts/interfaces/ITrap.sol";
 
-interface IEthereumHoodie {
-    function isActive() external view returns (bool);
+interface ITimeLockTrap {
+    function checkStatus() external view returns (bool);
 }
 
 contract Trap is ITrap {
     address public constant RESPONSE_CONTRACT = 0x1bA094B65a0b336cb06D49A3A6FC1A2E30f5D059;
-    string constant discordName = "yourdiscord";
+    string constant discordName = "yourdiscordusername";
 
     function collect() external view returns (bytes memory) {
-        bool active = IEthereumHoodie(RESPONSE_CONTRACT).isActive();
+        bool active = ITimeLockTrap(RESPONSE_CONTRACT).checkStatus();
         return abi.encode(active, discordName);
     }
 
