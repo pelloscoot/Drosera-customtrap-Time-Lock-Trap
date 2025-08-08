@@ -1,7 +1,7 @@
 # 🚀 Drosera-customtrap-Randomized-Target
 
 **Contract Address:**  
-`0xe44872a9747b857A0f73133c9752b2d687918E6A`
+`0xC790Ea032589e421edA386CA70E4756811aE457E`
 
 **Functionality:**  
 🎯 Purpose of This Logic
@@ -105,8 +105,8 @@ forge build
 
 ```toml
 path = "out/Trap.sol/Trap.json"
-response_contract = "0xe44872a9747b857A0f73133c9752b2d687918E6A"
-response_function = "RandomizedTarget()"
+response_contract = "0xC790Ea032589e421edA386CA70E4756811aE457E"
+response_function = "CommunityVoting()"
 ```
 
 ---
@@ -126,7 +126,7 @@ interface IEthereumHoodie {
 }
 
 contract Trap is ITrap {
-    address public constant RESPONSE_CONTRACT = 0xe44872a9747b857A0f73133c9752b2d687918E6A;
+    address public constant RESPONSE_CONTRACT = 0xC790Ea032589e421edA386CA70E4756811aE457E;
     string constant discordName = "yourdiscord";
 
     function collect() external view returns (bytes memory) {
