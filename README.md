@@ -1,4 +1,4 @@
-# 🚀 Drosera-customtrap-Randomized-Target
+# 🚀 Drosera-customtrap-Community-Voting
 
 **Contract Address:**  
 `0xC790Ea032589e421edA386CA70E4756811aE457E`
